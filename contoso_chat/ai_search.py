@@ -8,6 +8,7 @@ from azure.search.documents.models import (
     QueryCaptionType,
     QueryAnswerType,
 )
+from azure.core.credentials import AzureKeyCredential
 
 def retrieve_documentation(
     question: str,
@@ -19,7 +20,8 @@ def retrieve_documentation(
     search_client = SearchClient(
         endpoint=os.environ["AZURE_SEARCH_ENDPOINT"],
         index_name=index_name,
-        credential=DefaultAzureCredential()
+        # credential=DefaultAzureCredential()
+        credential=AzureKeyCredential(os.environ["AZURE_SEARCH_KEY"]),
     )
 
     vector_query = VectorizedQuery(
