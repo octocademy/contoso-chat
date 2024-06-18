@@ -20,6 +20,12 @@ hooks:
       continueOnError: false
       interactive: true
       run: infra/hooks/postprovision.ps1
+pipeline:
+  variables:
+    - AZURE_OPENAI_ENDPOINT
+    - AZURE_OPENAI_API_VERSION
+  secrets:
+    - AZURE_OPENAI_API_KEY
 
 
 ################################################################
