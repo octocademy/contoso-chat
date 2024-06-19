@@ -32,6 +32,7 @@ jobs:
       AZURE_OPENAI_API_VERSION: ${{ secrets.AZURE_OPENAI_API_VERSION }}
       COSMOS_ENDPOINT: "${{ secrets.COSMOS_ENDPOINT }}"
       AZURE_SEARCH_ENDPOINT: "${{ secrets.AZURE_SEARCH_ENDPOINT }}"
+      AZURE_SEARCH_KEY: "${{ secrets.AZURE_SEARCH_KEy }}"
 
     steps:
       - name: checkout repo content
